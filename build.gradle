@@ -1,0 +1,28 @@
+group 'com.adam.learning'
+version '1.0'
+
+apply plugin: 'java'
+apply plugin: 'com.google.protobuf'
+apply plugin: 'application'
+mainClassName = 'com.adam.learning.Application'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile('com.google.protobuf:protobuf-java:2.6.1')
+}
+
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath('com.google.protobuf:protobuf-gradle-plugin:0.7.4')
+    }
+}
+
+protobuf {
+    generatedFilesBaseDir = "$projectDir/src"
+}
