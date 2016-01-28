@@ -1,9 +1,14 @@
 Google Protocol Buffers is a 2 part installations:
 1) Make build to install the compiler 'protoc'
-2) Maven build to install the Java SDK
+2) Maven build to install the Java libs to local repo?
 
 
 protoc -I=$SRC_DIR --java_out=$DST_DIR $SRC_DIR/addressbook.proto
-
 // Run from project root 'protobuftest'
 protoc -I=./src/main/proto --java_out=./build/classes ./src/main/proto/addressbook.proto
+
+
+https://github.com/google/protobuf-gradle-plugin
+
+
+java -jar build/libs/protobuftest-1.0.jar AdamLaPlante
