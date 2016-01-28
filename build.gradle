@@ -4,7 +4,7 @@ version '1.0'
 apply plugin: 'java'
 apply plugin: 'com.google.protobuf'
 apply plugin: 'application'
-mainClassName = 'com.adam.learning.AddPerson'
+mainClassName = 'com.adam.learning.AddressBookApplication'
 
 repositories {
     mavenCentral()
@@ -30,22 +30,10 @@ protobuf {
 }
 
 jar {
-//    configurations.compile.files.collect { System.out.println("Including library libs/$it.name") }
     manifest {
         attributes (
-            'Main-Class': 'com.adam.learning.AddPerson',
+            'Main-Class': 'com.adam.learning.AddressBookApplication',
             'Class-Path': "protobuf-java-2.6.1.jar"
         )
     }
-   // TODO how to get libs in jar for fat jar
 }
-
-// Dirty hack to get dependency in right place
-// so can run the java -jar build/libs/protobuftest-1.0.jar AdamLaPlante
-// to enable console input not otherwise possible with gradle
-task ready(type: Copy) {
-    from 'lib'
-    into 'build/libs'
-}
-
-// java -jar build/libs/protobuftest-1.0.jar AdamLaPlante

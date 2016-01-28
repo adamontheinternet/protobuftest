@@ -10,5 +10,3 @@ protoc -I=./src/main/proto --java_out=./build/classes ./src/main/proto/addressbo
 
 https://github.com/google/protobuf-gradle-plugin
 
-
-java -jar build/libs/protobuftest-1.0.jar AdamLaPlante
