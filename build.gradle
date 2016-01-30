@@ -1,10 +1,11 @@
 group 'com.adam.learning'
 version '1.0'
 
+
 apply plugin: 'java'
 apply plugin: 'com.google.protobuf'
 apply plugin: 'application'
-mainClassName = 'com.adam.learning.AddressBookApplication'
+mainClassName = 'com.adam.learning.Application'
 
 repositories {
     mavenCentral()
@@ -12,6 +13,10 @@ repositories {
 
 dependencies {
     compile('com.google.protobuf:protobuf-java:2.6.1')
+    compile('org.mongodb:mongodb-driver:3.2.1')
+    compile('org.springframework:spring-context:4.2.4.RELEASE')
+    compile('org.springframework:spring-core:4.2.4.RELEASE')
+    // TODO exclude commons-logging and use sfl4j or something
 }
 
 buildscript {
